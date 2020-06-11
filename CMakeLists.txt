@@ -5,7 +5,7 @@ set(TARGET tinyxml)
 set(CMAKE_DEBUG_POSTFIX "_d" CACHE STRING "Generate debug library name with a postfix.")
 set(tinyXML_HDR tinystr.h tinyxml.h)
 
-set(tinyXML_SRC 
+set(tinyXML_SRC
   tinystr.cpp       tinyxml.cpp
   tinyxmlerror.cpp  tinyxmlparser.cpp) #  xmltest.cpp)
 
@@ -20,8 +20,8 @@ target_include_directories(${TARGET}
   )
 
 set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${tinyXML_HDR}")
-  
-install(TARGETS ${TARGET} 
+
+install(TARGETS ${TARGET}
   ARCHIVE DESTINATION lib
   RUNTIME DESTINATION bin
   PUBLIC_HEADER DESTINATION include

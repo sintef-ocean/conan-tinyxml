@@ -4,14 +4,18 @@
 from conans import ConanFile, CMake, tools
 import shutil
 
+
 class TinyxmlConan(ConanFile):
     name = "tinyxml"
     version = "2.6.2"
     license = "Zlib"
-    url = "https://github.com/joakimono/conan-tinyxml"
+    url = "https://github.com/sintef-ocean/conan-tinyxml"
     author = "Joakim Haugen (joakim.haugen@gmail.com)"
     homepage = "http://www.grinninglizard.com/tinyxml/"
-    description = "TinyXML is a simple, small, C++ XML parser that can be easily integrating into other programs."
+    description = \
+        "TinyXML is a simple, small, C++ XML parser "\
+        "that can be easily integrating into other programs."
+    topics = ("TinyXML", "XML", "parser")
     settings = "os", "compiler", "build_type", "arch"
     exports_sources = "CMakeLists.txt"
     exports = "lib_license/LICENSE"
@@ -21,7 +25,7 @@ class TinyxmlConan(ConanFile):
 
     def source(self):
         link = "https://sourceforge.net/projects/tinyxml/files/tinyxml/{}/{}"\
-        .format(self.version,self.source_file)
+        .format(self.version, self.source_file)
         tools.get(link, sha1="cba3f50dd657cb1434674a03b21394df9913d764")
         shutil.move("CMakeLists.txt", self.source_subfolder + "/CMakeLists.txt")
 

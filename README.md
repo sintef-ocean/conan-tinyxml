@@ -1,10 +1,12 @@
-[_![MSVC Conan](https://github.com/sintef-ocean/conan-tinyxml/workflows/MSVC%20Conan/badge.svg)_](https://github.com/sintef-ocean/conan-tinyxml/actions?query=workflow%3A%22MSVC+Conan%22)
-[_![GCC Conan](https://github.com/sintef-ocean/conan-tinyxml/workflows/GCC%20Conan/badge.svg)_](https://github.com/sintef-ocean/conan-tinyxml/actions?query=workflow%3A%22GCC+Conan%22)
-[_![Clang Conan](https://github.com/sintef-ocean/conan-tinyxml/workflows/Clang%20Conan/badge.svg)_](https://github.com/sintef-ocean/conan-tinyxml/actions?query=workflow%3A%22Clang+Conan%22)
-[ ![Download](https://api.bintray.com/packages/sintef-ocean/conan/tinyxml%3Asintef/images/download.svg) ](https://bintray.com/sintef-ocean/conan/tinyxml%3Asintef/_latestVersion)
+[![GCC Conan](https://github.com/sintef-ocean/conan-tinyxml/workflows/GCC%20Conan/badge.svg)](https://github.com/sintef-ocean/conan-tinyxml/actions?query=workflow%3A"GCC+Conan")
+[![Clang Conan](https://github.com/sintef-ocean/conan-tinyxml/workflows/Clang%20Conan/badge.svg)](https://github.com/sintef-ocean/conan-tinyxml/actions?query=workflow%3A"Clang+Conan")
+[![MSVC Conan](https://github.com/sintef-ocean/conan-tinyxml/workflows/MSVC%20Conan/badge.svg)](https://github.com/sintef-ocean/conan-tinyxml/actions?query=workflow%3A"MSVC+Conan")
+[![Download](https://api.bintray.com/packages/sintef-ocean/conan/tinyxml%3Asintef/images/download.svg)](https://bintray.com/sintef-ocean/conan/tinyxml%3Asintef/_latestVersion)
 
 
-The recipe generates library packages, which can be found at [Bintray](https://bintray.com/sintef-ocean/conan/tinyxml%3Asintef/_latestVersion).
+[Conan.io](https://conan.io) recipe for [tinyxml](http://www.grinninglizard.com/tinyxml).
+
+The recipe generates library packages, which can be found at [Bintray](https://bintray.com/sintef-ocean/conan/tinyxml%3Asintef).
 The package is usually consumed using the `conan install` command or a *conanfile.txt*.
 
 ## How to use this package
@@ -21,7 +23,7 @@ The package is usually consumed using the `conan install` command or a *conanfil
 
    ```
    [requires]
-   tinyxml/[>=0.1]@sintef/stable
+   tinyxml/[>=2.4.2]@sintef/stable
 
    [options]
    tinyxml:shared=False # by default

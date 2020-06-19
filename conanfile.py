@@ -10,7 +10,7 @@ class TinyxmlConan(ConanFile):
     version = "2.6.2"
     license = "Zlib"
     url = "https://github.com/sintef-ocean/conan-tinyxml"
-    author = "Joakim Haugen (joakim.haugen@gmail.com)"
+    author = "SINTEF Ocean"
     homepage = "http://www.grinninglizard.com/tinyxml/"
     description = \
         "TinyXML is a simple, small, C++ XML parser "\

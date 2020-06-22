@@ -25,7 +25,7 @@ class TinyxmlConan(ConanFile):
 
     def source(self):
         link = "https://sourceforge.net/projects/tinyxml/files/tinyxml/{}/{}"\
-        .format(self.version, self.source_file)
+            .format(self.version, self.source_file)
         tools.get(link, sha1="cba3f50dd657cb1434674a03b21394df9913d764")
         shutil.move("CMakeLists.txt", self.source_subfolder + "/CMakeLists.txt")
 

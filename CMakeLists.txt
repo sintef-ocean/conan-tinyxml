@@ -9,8 +9,6 @@ set(tinyXML_SRC
   tinystr.cpp       tinyxml.cpp
   tinyxmlerror.cpp  tinyxmlparser.cpp) #  xmltest.cpp)
 
-#add_definitions( -DTIXML_USE_STL ) # add as option in package?
-
 add_library(${TARGET} ${tinyXML_SRC})
 
 target_include_directories(${TARGET}
@@ -18,6 +16,10 @@ target_include_directories(${TARGET}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/>
     $<INSTALL_INTERFACE:include/>
   )
+
+if (USE_STL)
+  target_compile_definitions(${TARGET} PUBLIC TIXML_USE_STL )
+endif()
 
 set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER "${tinyXML_HDR}")
 

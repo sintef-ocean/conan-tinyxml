@@ -17,6 +17,8 @@ class TinyxmlConan(ConanFile):
         "that can be easily integrating into other programs."
     topics = ("TinyXML", "XML", "parser")
     settings = "os", "compiler", "build_type", "arch"
+    options = { "use_stl": [True, False] }
+    default_options = { "use_stl": True }
     exports_sources = "CMakeLists.txt"
     exports = "lib_license/LICENSE"
     source_file = "tinyxml_2_6_2.tar.gz"
@@ -31,6 +33,7 @@ class TinyxmlConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
+        cmake.definitions["USE_STL"] = self.options.use_stl
         cmake.configure(source_folder=self.source_subfolder,
                         build_folder=self.build_subfolder)
         cmake.build()
@@ -44,4 +47,6 @@ class TinyxmlConan(ConanFile):
         self.cpp_info.libs = ["tinyxml"]
         if self.settings.build_type == "Debug":
             self.cpp_info.libs[0] += "_d"
+        if self.options.use_stl:
+            self.cpp_info.defines = ["TIXML_USE_STL"]
         self.cpp_info.name = "TinyXML"

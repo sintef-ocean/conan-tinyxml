@@ -17,8 +17,9 @@ class TinyxmlConan(ConanFile):
         "that can be easily integrating into other programs."
     topics = ("TinyXML", "XML", "parser")
     settings = "os", "compiler", "build_type", "arch"
-    options = { "use_stl": [True, False] }
-    default_options = { "use_stl": True }
+    options = { "use_stl": [True, False],
+                "fPIC": [True, False]}
+    default_options = { "use_stl": True, "fPIC": True }
     exports_sources = "CMakeLists.txt"
     exports = "lib_license/LICENSE"
     source_file = "tinyxml_2_6_2.tar.gz"

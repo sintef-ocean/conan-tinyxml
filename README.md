@@ -59,7 +59,8 @@ The package is usually consumed using the `conan install` command or a *conanfil
 
 | Option        | Allowed values    |   Default value   |
 | ------------- | ----------------- | ----------------- |
-| -             | -                 | -                 |
+| use_stl       | True, False       | True              |
+| fPIC          | True, False       | True              |
 
 
 ## Known recipe issues

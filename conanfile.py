@@ -31,8 +31,14 @@ class TinyxmlConan(ConanFile):
         tools.get(link, sha1="cba3f50dd657cb1434674a03b21394df9913d764")
         shutil.move("CMakeLists.txt", self.source_subfolder + "/CMakeLists.txt")
 
+    def configure(self):
+        if self.settings.os == "Windows":
+            del self.options.fPIC
+
     def build(self):
         cmake = CMake(self)
+        if self.settings.os != "Windows":
+            cmake.definitions['CMAKE_POSITION_INDEPENDENT_CODE'] = self.options.fPIC
         cmake.definitions["USE_STL"] = self.options.use_stl
         cmake.configure(source_folder=self.source_subfolder,
                         build_folder=self.build_subfolder)
